@@ -6,7 +6,7 @@ from nonebot.adapters.onebot.v11 import Adapter as ONEBOT_V11Adapter
 from nonebot.adapters.kaiheila import Adapter as 开黑啦Adapter
 
 # Custom your logger
-# 
+#
 # from nonebot.log import logger, default_format
 # logger.add("error.log",
 #            rotation="00:00",
@@ -20,16 +20,18 @@ app = nonebot.get_asgi()
 
 driver = nonebot.get_driver()
 driver.register_adapter(ONEBOT_V11Adapter)
-driver.register_adapter(开黑啦Adapter)
+# driver.register_adapter(开黑啦Adapter)
 
-nonebot.load_builtin_plugins("echo")
+# nonebot.load_builtin_plugins("echo")
 
 # Please DO NOT modify this file unless you know what you are doing!
 # As an alternative, you should use command `nb` or modify `pyproject.toml` to load plugins
 nonebot.load_from_toml("pyproject.toml")
+# nonebot.load_plugin("nonebot_plugin_chatgpt")
+nonebot.load_plugin("nonebot_plugin_autohelp")
 
 # Modify some config / config depends on loaded configs
-# 
+#
 # config = driver.config
 # do something...
 

@@ -1,0 +1,113 @@
+{
+  "commentAnchors.tags.anchors": {
+    "!": {
+      "iconColor": "red",
+      "scope": "workspace"
+    },
+    "debug": {
+      "highlightColor": "#FFB300",
+      "iconColor": "orange",
+      "scope": "file"
+    },
+    "delete": {
+      "highlightColor": "#FFB300",
+      "iconColor": "orange",
+      "scope": "workspace"
+    },
+    "fixme": {
+      "iconColor": "red",
+      "scope": "workspace"
+    },
+    "link": {
+      "behavior": "link",
+      "highlightColor": "#2ecc71",
+      "iconColor": "#2ecc71",
+      "scope": "workspace"
+    },
+    "note": {
+      "highlightColor": "#FFB300",
+      "iconColor": "orange",
+      "scope": "file"
+    },
+    "review": {
+      "highlightColor": "#64DD17",
+      "iconColor": "green",
+      "scope": "workspace"
+    },
+    "section": {
+      "behavior": "region",
+      "highlightColor": "#896afc",
+      "iconColor": "blurple",
+      "scope": "file"
+    },
+    "stub": {
+      "highlightColor": "#BA68C8",
+      "iconColor": "purple",
+      "scope": "file"
+    },
+    "todo": {
+      "iconColor": "blue",
+      "scope": "workspace"
+    }
+  },
+  "better-comments.tags": [
+    {
+      "backgroundColor": "transparent",
+      "bold": true,
+      "color": "#F44336",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "!",
+      "underline": false
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#F44336",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "fixme",
+      "underline": true
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#3498DB",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "?",
+      "underline": true
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#474747",
+      "italic": false,
+      "strikethrough": true,
+      "tag": "//",
+      "underline": false
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#3ea8ff",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "todo",
+      "underline": true
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#98C379",
+      "italic": true,
+      "strikethrough": false,
+      "tag": "*",
+      "underline": false
+    }
+  ],
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.linting.enabled": true,
+  "python.linting.mypyEnabled": true
+}
