@@ -1,6 +1,6 @@
 host: localhost
-port: ${{SELF_PORT_START}}
-maxPort: ${{SELF_PORT_END}}
+port: 5140
+maxPort: 5149
 plugins:
   group:basic:
     help: null
@@ -25,6 +25,7 @@ plugins:
     status: null
     chat: null
     auth: null
+    migration: null
   group:database:
     database-sqlite: null
     ~database-mysql: null
@@ -44,7 +45,9 @@ plugins:
       protocol: ws
       token: ${{env.KOOK_TOKEN}}
     ~adapter-feishu: null
-    adapter-mcdr: null
+    adapter-mcdr:
+      privateKey: abc123
+  aoandon-daemon: null
   '@myrtus/forward': null
   '@myrtus/tool': null
 prefix:

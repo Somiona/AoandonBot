@@ -12,7 +12,7 @@
     "directory": "plugins/adapter-mcdr"
   },
   "bugs": "https://github.com/Somiona/AoandonBot/issues",
-  "main": "lib/index.js",
+  "main": "lib/index.ts",
   "typings": "lib/index.d.ts",
   "files": [
     "lib",
@@ -30,6 +30,7 @@
     "mcdr"
   ],
   "peerDependencies": {
+    "koishi-thirdeye": "^11.1.20",
     "koishi": "^4.10.10"
   },
   "koishi": {

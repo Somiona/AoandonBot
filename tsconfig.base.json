@@ -10,5 +10,8 @@
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "jsxImportSource": "@satorijs/element",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

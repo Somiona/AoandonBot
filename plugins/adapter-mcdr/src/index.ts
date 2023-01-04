@@ -1,16 +1,41 @@
-import { Context, Schema } from 'koishi'
+import { Bot, Context, Logger, Schema} from 'koishi'
 
-export const name = 'adapter-mcdr'
+import { PluginSchema, RegisterSchema, Reusable, SchemaProperty, DefinePlugin, InjectLogger, UsePlugin, PluginDef } from "koishi-thirdeye";
 
-export interface Config {}
+import {MCDReforgedAdapter} from './adapter'
 
-export const Config: Schema<Config> = Schema.object({})
+@RegisterSchema()
+export class MCDReforgedBotConfig {
+  constructor(_config: any) { }
 
-export function apply(ctx: Context) {
-  // write your plugin here
-  ctx.on('message', (session) => {
-    if (session.content === 'mcdr-test') {
-      session.send('pong! from Aoandon powered by koishi.js')
-    }
+  @SchemaProperty({
+    description: "MessageBridge加密私钥",
+    required: true
   })
+  privateKey!: string;
+
+  platform = 'mcdr';
+  get selfId(){
+    return "123";
+  }
+}
+
+@Reusable()
+@PluginSchema(MCDReforgedBotConfig)
+@DefinePlugin()
+export default class MCDReforgedBot extends Bot<Partial<MCDReforgedBotConfig>> {
+  internal = {};
+
+  @InjectLogger()
+  logger!: Logger;
+
+  @UsePlugin()
+  private loadAdapter() {
+    return PluginDef(MCDReforgedAdapter, this)
+  }
+
+  async sendMessage(channelId: string, content: string) {
+    this.logger.debug('send:', content)
+    return []
+  }
 }
