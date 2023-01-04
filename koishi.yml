@@ -1,0 +1,55 @@
+host: localhost
+port: ${{SELF_PORT_START}}
+maxPort: ${{SELF_PORT_END}}
+plugins:
+  group:basic:
+    help: null
+    rate-limit: null
+    locales: null
+    commands: null
+    admin: null
+    bind: null
+    echo: null
+  group:console:
+    console:
+      open: true
+    dataview: null
+    logger: null
+    insight: null
+    market:
+      registry:
+        endpoint: https://registry.npmmirror.com
+      search:
+        endpoint: https://registry.koishi.chat/index.json
+    sandbox: null
+    status: null
+    chat: null
+    auth: null
+  group:database:
+    database-sqlite: null
+    ~database-mysql: null
+    ~database-mongo: null
+  group:adapter:
+    gocqhttp: null
+    adapter-onebot:
+      selfId: ${{env.QQ_ID}}
+      protocol: ws
+      endpoint: ${{env.CQHTTP_ADDR}}
+      gocqhttp:
+        enabled: true
+        password: ''
+    ~adapter-discord: null
+    ~adapter-telegram: null
+    adapter-kook:
+      protocol: ws
+      token: ${{env.KOOK_TOKEN}}
+    ~adapter-feishu: null
+    adapter-mcdr: null
+  '@myrtus/forward': null
+  '@myrtus/tool': null
+prefix:
+  - /
+nickname:
+  - ${{env.NICKNAME}}
+autoAuthorize: 1
+autoAssign: true

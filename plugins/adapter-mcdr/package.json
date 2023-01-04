@@ -1,0 +1,54 @@
+{
+  "name": "@aoandon/koishi-plugin-adapter-mcdr",
+  "description": "Message bridge to MCDReforged managed Minecraft server, intentionally to be used with accompanied MCDReforged plugin. Used by Aoandon Bot",
+  "version": "0.1.0",
+  "contributors": [
+    "ChefeIrkka <somionat@gmail.com>"
+  ],
+  "homepage": "https://github.com/Somiona/AoandonBot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Somiona/AoandonBot.git",
+    "directory": "plugins/adapter-mcdr"
+  },
+  "bugs": "https://github.com/Somiona/AoandonBot/issues",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "AGPL-3.0",
+  "scripts": {},
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "mcdreforged",
+    "aoandon",
+    "minecraft",
+    "mcdr"
+  ],
+  "peerDependencies": {
+    "koishi": "^4.10.10"
+  },
+  "koishi": {
+    "category": "adapter",
+    "description": {
+      "en": "Message bridge to MCDReforged managed Minecraft server, intentionally to be used with accompanied MCDReforged plugin. Used by Aoandon Bot",
+      "zh": "MCDR服务端适配器, 用于幽灯Bot"
+    },
+    "service": {
+      "required": [
+        "database"
+      ],
+      "optional": [],
+      "implements": [
+        "adapter"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 19.0.0"
+  }
+}
