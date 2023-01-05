@@ -1,5 +1,5 @@
 {
-  "name": "koishi-plugin-aoandon-deamon",
+  "name": "koishi-plugin-aoandon-daemon",
   "description": "This is the general plugin used by aoandon bot",
   "private": true,
   "version": "1.0.0",

@@ -1,21 +1,25 @@
-import { Bot, Context, Logger, Schema} from 'koishi'
+import { Bot, Logger, Schema } from 'koishi'
+import {
+  DefinePlugin, InjectLogger,
+  PluginDef, PluginSchema, RegisterSchema,
+  Reusable, SchemaProperty, UsePlugin
+} from "koishi-thirdeye";
 
-import { PluginSchema, RegisterSchema, Reusable, SchemaProperty, DefinePlugin, InjectLogger, UsePlugin, PluginDef } from "koishi-thirdeye";
-
-import {MCDReforgedAdapter} from './adapter'
+import { MCDReforgedAdapter } from './adapter'
+import { name } from './consts'
+export { name }
 
 @RegisterSchema()
 export class MCDReforgedBotConfig {
-  constructor(_config: any) { }
-
   @SchemaProperty({
     description: "MessageBridge加密私钥",
+    type: Schema.string(),
     required: true
   })
-  privateKey!: string;
+  privateKey: string;
 
   platform = 'mcdr';
-  get selfId(){
+  get selfId() {
     return "123";
   }
 }
@@ -26,7 +30,7 @@ export class MCDReforgedBotConfig {
 export default class MCDReforgedBot extends Bot<Partial<MCDReforgedBotConfig>> {
   internal = {};
 
-  @InjectLogger()
+  @InjectLogger(name)
   logger!: Logger;
 
   @UsePlugin()

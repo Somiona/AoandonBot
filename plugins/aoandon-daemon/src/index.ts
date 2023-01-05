@@ -1,6 +1,6 @@
 import { Context, Schema } from 'koishi'
 
-export const name = 'aoandon-deamon'
+export const name = 'aoandon-daemon'
 
 export interface Config {}
 
@@ -10,7 +10,7 @@ export function apply(ctx: Context) {
   // write your plugin here
   ctx.on('message', (session) => {
     if (session.content === 'mcdr-test') {
-      session.send('pong! from Aoandon powered by koishi.js aaa')
+      session.send('pong! from Aoandon powered by Koishi.js')
     }
   })
 }
